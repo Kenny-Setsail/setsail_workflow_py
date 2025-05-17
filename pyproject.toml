@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ss-pyworkflow"
+version = "0.1.1"
+description = "This is for workflow tracing on python environment."
+authors = [
+    { name="Kenny Chow", email="kennychow@setsailsoftware.com" }
+]
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.8"
+dependencies = [
+    "aiohttp",
+    "loguru",
+    "pydantic",
+]
+
+[project.urls]
+Homepage = "https://github.com/Kenny-Setsail/setsail_workflow_py"
+
+[tool.setuptools]
+packages = ["setsail_workflow_py"]
+package-dir = {"" = "src"}
