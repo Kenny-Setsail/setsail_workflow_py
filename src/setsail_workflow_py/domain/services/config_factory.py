@@ -23,10 +23,10 @@ class ConfigFactory:
 
             headers = {
                 "Content-Type": "application/json",
-                "api-key": os.getenv("WORKFLOW_MONITORING_API_KEY", trace_data.get("api_key", "UNKNOWN"))
+                "x-api-key": os.getenv("WORKFLOW_MONITORING_API_KEY", trace_data.get("x-api-key", "UNKNOWN"))
             }
 
-            if not trace_data.get("traceId") or raw_post_url == "UNKNOWN" or headers.get("api-key") == "UNKNOWN":
+            if not trace_data.get("traceId") or raw_post_url == "UNKNOWN" or headers.get("x-api-key") == "UNKNOWN":
                 return None
 
             return WorkflowMonitoringConfig(
